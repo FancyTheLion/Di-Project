@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 
 namespace DI_Car.Abstractions
 {
-    internal interface IEngine
+    internal interface ICar
     {
 
         /// <summary>
-        /// Завести мотор
+        /// Движение куда-либо
         /// </summary>
-        void StartEngine();
+        /// <param name="destination">Место назначения</param>
+        void DriveTo(string destination);
 
-        /// <summary>
-        /// Заглушить мотор
-        /// </summary>
-        void StopEngine();
+
+
+
+
+
     }
 }
