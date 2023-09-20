@@ -8,17 +8,10 @@ namespace DI_Car.Abstractions
 {
     internal interface ICar
     {
-
         /// <summary>
         /// Движение куда-либо
         /// </summary>
         /// <param name="destination">Место назначения</param>
         void DriveTo(string destination);
-
-
-
-
-
-
     }
 }

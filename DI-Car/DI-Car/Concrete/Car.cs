@@ -9,9 +9,18 @@ namespace DI_Car.Concrete
 {
     internal class Car : ICar
     {
+        private IEngine _engine;
+
+        public Car(IEngine engine)
+        {
+            _engine = engine;
+        }
+
         public void DriveTo(string destination)
         {
+            _engine.StartEngine();
             Console.WriteLine($"Автомобиль двигается в {destination}");
+            _engine.StopEngine();
         }
     }
 }

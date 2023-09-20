@@ -13,8 +13,8 @@ namespace DI_Car
 
                 HostApplicationBuilder hostApplicationBuilder = Host.CreateApplicationBuilder(args);
 
-                hostApplicationBuilder.Services.AddSingleton<ICar, Car>();
-                hostApplicationBuilder.Services.AddSingleton<IEngine, Engine1>();
+                hostApplicationBuilder.Services.AddScoped<ICar, Car>();
+                hostApplicationBuilder.Services.AddScoped<IEngine, Engine3>();
 
                 using IHost host = hostApplicationBuilder.Build();
 
@@ -23,8 +23,11 @@ namespace DI_Car
 
             #endregion
 
-            var packagesVersionsDeserializer = diProvider.GetService<ICar>();
-            var packagesVersionsDeserializer = diProvider.GetService<ICar>();
+            var car = diProvider.GetService<ICar>();
+
+            car.DriveTo("Бар");
+
+            Console.ReadLine();
         }
     }
 }
